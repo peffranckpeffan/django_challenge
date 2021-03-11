@@ -1,11 +1,11 @@
 from django.db import models
 
 
-class Status(models.Model):
+class BookStatus(models.Model):
     description = models.CharField(max_length=100, null=True, unique=True)
 
     def __str__(self):
-        return self.name
+        return self.description
 
 class Book(models.Model):
     name = models.CharField(max_length=300, null=True)
@@ -15,11 +15,10 @@ class Book(models.Model):
     pages = models.IntegerField(null=True)
     language = models.CharField(max_length=100,null=True)
     isbn = models.CharField(max_length=50, unique=True, default='')
-    status = models.ForeignKey(Status, null=True, on_delete=models.SET_NULL)
+    status = models.ForeignKey(BookStatus, null=True, on_delete=models.SET_NULL)
 
     def __str__(self):
         return self.name
-
 
 class Client(models.Model):
     name = models.CharField(max_length=300, null=True)
@@ -30,15 +29,30 @@ class Client(models.Model):
 class Loan(models.Model):
     id_book = models.ForeignKey(Book,null=True, on_delete=models.SET_NULL)
     id_client = models.ForeignKey(Client,null=True, on_delete=models.SET_NULL)
-    date_loan = models.DateTimeField(auto_now_add=True, null=True, editable=False)
-    date_expected_return = models.DateTimeField(auto_now_add=True, null=True, editable=False)
-    date_return = models.DateTimeField(null=True, editable=False)
-    fees = models.FloatField(null=True, editable=False)
+    date_loan = models.DateTimeField(null=True)
+    date_return = models.DateTimeField(null=True, blank=True)
+    mulct = models.FloatField(null=True, default=0.0)
+    status = [
+        (True, 'Ativo'),
+        (False, 'Inativo'),
+    ]
+    status = models.IntegerField(
+        choices=status,
+        default=1,
+    )
 
 class Reserve(models.Model):
     id_book = models.ForeignKey(Book,null=True, on_delete=models.SET_NULL)
     id_client = models.ForeignKey(Client,null=True, on_delete=models.SET_NULL)
-    date_reserve = models.DateTimeField(auto_now_add=True, null=True, editable=False)
+    date_reserve = models.DateTimeField(auto_now_add=True, null=True)
+    status = [
+        (True, 'Ativo'),
+        (False, 'Inativo'),
+    ]
+    status = models.IntegerField(
+        choices=status,
+        default=1,
+    )
 
 
 
