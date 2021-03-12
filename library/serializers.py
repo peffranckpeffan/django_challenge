@@ -8,21 +8,21 @@ class BookSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Book
-        fields = ['name', 'status']
+        fields = ['title', 'status']
 
     def get_status(self, obj):
         return obj.status.description
 
 class LoanSerializer(serializers.ModelSerializer):
-    name = serializers.SerializerMethodField()
+    title = serializers.SerializerMethodField()
     status = serializers.SerializerMethodField()
     
     class Meta:
         model = Loan
-        fields = ['mulct', 'name', 'status']
+        fields = ['mulct', 'title', 'status']
 
-    def get_name(self, obj):
-        return obj.id_book.name
+    def get_title(self, obj):
+        return obj.id_book.title
     
     def get_status(self, obj):
         return obj.id_book.status.description

@@ -1,7 +1,7 @@
 from ..models import Reserve
 
 from .controller_client import getClient
-from .controller_book import getBook
+from .controller_book import getBook, getBookStatus
 
 from datetime import *
 
@@ -15,14 +15,14 @@ def reserveBook(id_book, id_client):
     if book.status.description !=  'Available':
         message = {'error' : 'The book is currently unavailable.'}
     else:
-        bookstatus = getBookStatus(description='Reserved')
+        bookstatus = getBookStatus({"description":'Reserved'})
         
         #Update the status of the book
         book.status = bookstatus
         book.save()
 
         #Create the reservation
-        getClient({'id':id_client})
+        client = getClient({'id':id_client})
         reserve = Reserve(id_book=book, id_client=client)
         reserve.save()
 

@@ -1,0 +1,242 @@
+[
+    {
+        "model": "library.bookstatus",
+        "pk": 1,
+        "fields": {
+          "description": "Available"
+        }
+    },
+    {
+        "model": "library.bookstatus",
+        "pk": 2,
+        "fields": {
+          "description": "Loaned"
+        }
+    },
+    {
+        "model": "library.bookstatus",
+        "pk": 3,
+        "fields": {
+          "description": "Reserved"
+        }
+    },
+    {
+        "model": "library.client",
+        "pk": 1,
+        "fields": {
+          "name": "Franck"
+        }
+    },
+    {
+        "model": "library.client",
+        "pk": 2,
+        "fields": {
+          "name": "John"
+        }
+    },
+    {
+        "model": "library.client",
+        "pk": 3,
+        "fields": {
+          "name": "Gabriel"
+        }
+    },
+    {
+        "model": "library.client",
+        "pk": 4,
+        "fields": {
+          "name": "William"
+        }
+    },
+    {
+      "model": "library.book",
+      "pk": 1,
+      "fields": {
+        "title": "Cem Anos de Solidao",
+        "author": "Gabriel Garcia Marquez",
+        "publisher": "Record",
+        "year":"2020",
+        "pages":"446",
+        "isbn" : "9788501012074",
+        "status": "1",
+        "language": "Portuguese"
+      }
+    },
+    {
+        "model": "library.book",
+        "pk": 2,
+        "fields": {
+          "title": "Civilization and Its Discontents",
+          "author": "Sigmund Freud",
+          "publisher": "Penguin Modern Classics",
+          "year":"2002",
+          "pages":"97",
+          "isbn" : "978-0141182360",
+          "status": "1",
+          "language": "English"
+        }
+      },
+      {
+        "model": "library.book",
+        "pk": 3,
+        "fields": {
+          "title": "Pele Negra, Mascaras Brancas",
+          "author": "Frantz Fanon",
+          "publisher": "Edufba",
+          "year":"2008",
+          "pages":"187",
+          "isbn" : "978-8523204839",
+          "status": "3",
+          "language": "Portuguese"
+        }
+      },
+      {
+        "model": "library.reserve",
+        "pk": 1,
+        "fields": {
+          "id_book": "3",
+          "id_client": "1",
+          "date_reserve": "2020-02-09 12:48:54",
+          "status": 1
+        }
+      },
+      {
+        "model": "library.book",
+        "pk": 4,
+        "fields": {
+          "title": "A Brief History of Time",
+          "author": "Stephen Hawking",
+          "publisher": "Bantam",
+          "year":"1998",
+          "pages":"212",
+          "isbn" : "9780553380163",
+          "status": "2",
+          "language": "English"
+        }
+      },
+      {
+        "model": "library.loan",
+        "pk": 1,
+        "fields": {
+          "id_book": "4",
+          "id_client": "1",
+          "date_loan": "2021-02-25 12:48:54",
+          "status": 1
+        }
+      },
+      {
+        "model": "library.book",
+        "pk": 5,
+        "fields": {
+          "title": "Seis Segundos de Atencao",
+          "author": "Humberto Gessinger",
+          "publisher": "BelasLetras",
+          "year":"2013",
+          "pages":"127",
+          "isbn" : "8581741258",
+          "status": "2",
+          "language": "Portuguese"
+        }
+      },
+      {
+        "model": "library.loan",
+        "pk": 2,
+        "fields": {
+          "id_book": "4",
+          "id_client": "1",
+          "date_loan": "2021-02-25 12:48:54",
+          "date_return": "2021-02-28 12:48:54",
+          "status": 0
+        }
+      },
+      {
+        "model": "library.book",
+        "pk": 6,
+        "fields": {
+          "title": "Hitchhiker's Guide to the Galaxy",
+          "author": "Douglas Adams",
+          "publisher": "Gollancz",
+          "year":"2012",
+          "pages":"127",
+          "isbn" : "9780575115347",
+          "status": "1",
+          "language": "English"
+        }
+      },
+      {
+        "model": "library.book",
+        "pk": 7,
+        "fields": {
+          "title": "Cidade De Deus",
+          "author": "Paulo Lins",
+          "publisher": "Companhia das Letras",
+          "year":"2002",
+          "pages":"403",
+          "isbn" : "1231321564",
+          "status": "2",
+          "language": "Portuguese"
+        }
+      },
+      {
+        "model": "library.loan",
+        "pk": 3,
+        "fields": {
+          "id_book": "7",
+          "id_client": "1",
+          "date_loan": "2021-02-22 12:48:54",
+          "status": 1
+        }
+      },
+      {
+        "model": "library.book",
+        "pk": 8,
+        "fields": {
+          "title": "The End of Eternity",
+          "author": "Isaac Asimov",
+          "publisher": "Orb Books",
+          "year":"2011",
+          "pages":"255",
+          "isbn" : "0765319195",
+          "status": "2",
+          "language": "English"
+        }
+      },
+      {
+        "model": "library.loan",
+        "pk": 4,
+        "fields": {
+          "id_book": "8",
+          "id_client": "4",
+          "date_loan": "2021-01-20 12:48:54",
+          "status": 1
+        }
+      },
+      {
+        "model": "library.book",
+        "pk": 9,
+        "fields": {
+            "title": "Brave New World",
+            "author": "Aldous Huxley",
+            "publisher": "HarperCollins Publishers",
+            "year":"2006",
+            "pages":"259",
+            "isbn" : "0060850523",
+            "status": "1",
+            "language": "English"
+        }
+      },
+      {
+        "model": "library.book",
+        "pk": 10,
+        "fields": {
+          "title": "A Casa da Esquina",
+          "author": "Glenn Block, et al.",
+          "publisher": "L&PM",
+          "year":"2012",
+          "pages":"128",
+          "isbn" : "8525405876",
+          "status": "1",
+          "language": "Portugue"
+        }
+      }
+  ]

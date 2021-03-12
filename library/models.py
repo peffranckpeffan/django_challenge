@@ -8,7 +8,7 @@ class BookStatus(models.Model):
         return self.description
 
 class Book(models.Model):
-    name = models.CharField(max_length=300, null=True)
+    title = models.CharField(max_length=300, null=True)
     author = models.CharField(max_length=300, null=True)
     publisher = models.CharField(max_length=300,null=True)
     year = models.IntegerField(null=True)
