@@ -10,8 +10,15 @@ Qualquer dúvida, fico a disposição.
 
 ## Pré-requisitos
 
+### Linux 
+
+- VirtualBox: https://www.virtualbox.org/wiki/Linux_Downloads
 - Docker: https://docs.docker.com/engine/install/
 - Docker Compose: https://docs.docker.com/compose/install/
+
+## Windows
+
+- https://docs.docker.com/docker-for-windows/install/
 
 ## Execução
 
