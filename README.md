@@ -34,9 +34,9 @@ No linux, também pode se usar o comando curl:
 ```bash
 curl http://localhost:8000/api/<funcionalidade>/
 ```
-Para listar todos os livros, temos:
+Para listar todos os livros, temos a url:
 ```bash
-curl http://localhost:8000/api/books/
+http://localhost:8000/api/books/
 ```
 
 No caso para realizar uma reserva, como mencionado, alterei um pouco a url, ficando:
