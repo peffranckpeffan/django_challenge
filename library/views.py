@@ -9,6 +9,7 @@ from .controller.controller_loan import updateLoanMulct, filterLoans
 from .controller.controller_book import getBooks
 from .controller.controller_reserve import reserveBook
 
+#Returns a json with all books registered in the database
 @api_view(['GET'])
 def getAllBooks(request):
 
@@ -18,6 +19,7 @@ def getAllBooks(request):
 
     return Response(serializer.data)
 
+#Returns a json with all books loaned to a given client
 @api_view(['GET'])
 def getLoanedBooks(request, pk_client):
     
@@ -29,7 +31,7 @@ def getLoanedBooks(request, pk_client):
 
     return Response(serializer.data)
 
-
+#Reserves the book to a given client
 @api_view(['GET'])
 def makeBookReservation(request, pk_book, pk_client):
 
