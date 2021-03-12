@@ -51,7 +51,11 @@ http://localhost:8000/api/client/<id_do_cliente>/books/
 http://localhost:8000/api/client/1/books/
 ```
 
-Caso queira acessar o painel admin para alterar os dados ou cadastrar novos, basta executar o comando:
+Caso queira acessar o painel admin para alterar os dados ou cadastrar novos, basta executar o comando para criar um usuário:
 ```bash
 docker-compose exec web python manage.py createsuperuser
+```
+E acessar:
+```bash
+http://localhost:8000/admin/
 ```
